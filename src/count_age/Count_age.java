@@ -94,33 +94,7 @@ public class Count_age {
 		browseFile.setLocation(550,80);
 		browseFile.setFont(fontText);
 		browseFile.addActionListener(btListener);
-		
-		//radio button
-		radio1.setSize(150,50);
-		radio1.setLocation(150,200);
-		radio1.setFont(radioFont);
-		radio2.setSize(150,50);
-		radio2.setLocation(150,250);
-		radio2.setFont(radioFont);
-		radio3.setSize(150,50);
-		radio3.setLocation(150,300);
-		radio3.setFont(radioFont);
-		radio1.setActionCommand("mode1");
-		radio2.setActionCommand("mode2");
-		radio3.setActionCommand("mode3");
-		//group button
-		ButtonGroup group = new ButtonGroup();
-		group.add(radio1);
-		group.add(radio2);
-		group.add(radio3);
-		radio1.addActionListener(btListener);
-		radio2.addActionListener(btListener);
-		radio3.addActionListener(btListener);
-		frame.add(radio1);
-		frame.add(radio2);
-		frame.add(radio3);
-		
-		
+
 		
 		frame.setLayout(null);
 		frame.add(enterButton);
@@ -136,7 +110,7 @@ public class Count_age {
 		inputText.setText(" <輸入檔案位置>");
 		//inputText.addActionListener(btListener);
 		frame.add(inputText);
-	/*	
+	
 		//text field of ending date
 		monthInput.setSize(200,30);
 		monthInput.setLocation(120,200);
@@ -184,7 +158,7 @@ public class Count_age {
 		instruction.setFont(new Font("微軟正黑體",Font.PLAIN,20));
 		instruction.setLocation(380,150);
 		frame.add(instruction);
-		*/
+		
 		
 		//input example1
 		JLabel modleInputFile = new JLabel("( 範例: C:/Users/USER/workspace/count_age/test.txt )");
@@ -193,7 +167,7 @@ public class Count_age {
 		modleInputFile.setLocation(120,100);
 		frame.add(modleInputFile);
 		
-		/*
+		
 		//input example2
 		JLabel modleInputDate = new JLabel("( 範例: 1995/01/01 )");
 		modleInputDate.setSize(400,50);
@@ -214,7 +188,7 @@ public class Count_age {
 		modleCol.setFont(fontComment);
 		modleCol.setLocation(120,320);
 		frame.add(modleCol);
-		*/
+		
 		
 		//solution in main window
 		showSolution.setSize(300,50);
@@ -292,7 +266,7 @@ public class Count_age {
 					}
 					
 					
-					/*//get date data
+					//get date data
 					for (int i=0 ; i<(rowNum-1); i++)
 					{
 						//readingData = readSheet.getCell(Integer.parseInt(colInput)-1,1+i).getContents();
@@ -304,7 +278,7 @@ public class Count_age {
 						{
 							outputBuffer[i][n] = brithdate[n];
 						}
-					}*/
+					}
 					workbook.close();
 					
 				//write excel
@@ -317,7 +291,7 @@ public class Count_age {
 						
 						String[] unit = {"年","月","日"};
 						
-						/*//output original data
+						//output original data
 						for (int i=0 ; i<rowNum ; i++)
 						{
 							for (int j=0 ; j<colNum ; j++)
@@ -325,7 +299,7 @@ public class Count_age {
 								Label oriData = new Label(j,i,excelData[i][j]);
 								outputSheet.addCell(oriData);
 							}
-						}*/
+						}
 						
 						//output data OR final project
 						for(int i=0 ; i<4 ; i++)
@@ -339,7 +313,7 @@ public class Count_age {
 							}
 						}
 						
-						/*//output processed data
+						//output processed data
 						for(int i=0 ; i<rowNum-1 ; i++)
 						{
 							for (int n=0 ; n<3 ; n++)
@@ -348,7 +322,7 @@ public class Count_age {
 								Label outputLabel = new Label((colNum+n),i+1,String.valueOf(outputBuffer[i][n])+unit[n]);
 								outputSheet.addCell(outputLabel);
 							}
-						}*/
+						}
 						outputWorkbook.write();
 						outputWorkbook.close();
 					}
